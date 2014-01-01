@@ -1,0 +1,14 @@
+{
+  "name": "Blocks",
+  "description": "Jogo de bloquinhos. Cuidado, vicia",
+  "version": "1",
+  "app": {
+    "launch": {
+      "local_path": "index.htm"
+    }
+  },
+  "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  }
+}

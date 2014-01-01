@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="Bloquinhos_Metro.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bloquinhos_Metro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="grid1" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Rectangle x:Name="P1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P6" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P8" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P9" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P10" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P11" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P12" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P13" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P14" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P15" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P16" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P17" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P18" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P19" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P20" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P21" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P22" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P23" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P24" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P25" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P26" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P27" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P28" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P29" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P30" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P31" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P32" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P33" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P34" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P35" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P36" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P37" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P38" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P39" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P40" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P41" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P42" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P43" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P44" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P45" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P46" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P47" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P48" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,386,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P49" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P50" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P51" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P52" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P53" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P54" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P55" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P56" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P57" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="42,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P58" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="111,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P59" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="180,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P60" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="249,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P61" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="318,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P62" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="387,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <Rectangle x:Name="P63" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="456,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped"/>
+        <Rectangle x:Name="P64" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Margin="525,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="64" Tapped="P_Tapped" RenderTransformOrigin="1.577,0.533"/>
+        <ProgressBar x:Name="pbTempo" HorizontalAlignment="Left" Height="34" Margin="42,593,0,0" VerticalAlignment="Top" Width="547" Maximum="6000" LargeChange="100" SmallChange="100"/>
+        <Button x:Name="btnNovo" Content="Novo jogo" HorizontalAlignment="Left" Margin="1227,39,0,0" VerticalAlignment="Top" Height="64" Width="129" Tapped="btnNovo_Tapped" />
+        <Rectangle x:Name="picEscolhido" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="654,178,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="txtVidas" HorizontalAlignment="Left" Margin="670,386,0,0" TextWrapping="Wrap" Text="Vidas" VerticalAlignment="Top" RenderTransformOrigin="0.156,-2.615"/>
+        <TextBlock x:Name="lblNivel" HorizontalAlignment="Left" Margin="670,404,0,0" TextWrapping="Wrap" Text="Nível" VerticalAlignment="Top" RenderTransformOrigin="0.156,-2.615"/>
+        <TextBlock x:Name="lblPontos" HorizontalAlignment="Left" Margin="671,422,0,0" TextWrapping="Wrap" Text="Pontos" VerticalAlignment="Top" RenderTransformOrigin="0.156,-2.615"/>
+        <ProgressBar x:Name="pbProximaVida" HorizontalAlignment="Left" Height="34" Margin="42,632,0,0" VerticalAlignment="Top" Width="547" Maximum="6000" LargeChange="100" SmallChange="100"/>
+
+    </Grid>
+</Page>

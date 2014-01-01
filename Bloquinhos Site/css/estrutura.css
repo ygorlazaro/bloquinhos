@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+Body {margin:0; background-color:#0b2a3e; background-image:url(../img/bg.jpg); background-repeat:repeat-x; font-size:12px; font-family:Verdana, Geneva, sans-serif; color:#e8e8e8;}
+
+a:link { color:#d7d7d7; font-weight:bold; text-decoration:none;}
+a:hover { color:#d7d7d7; font-weight:bold; text-decoration:underline;}
+a:visited { color:#d7d7d7; font-weight:bold; text-decoration:none;}
+
+.h2 { font-size:14px; color:#FFF; font-weight:bold;}
+.h1 {
+    color: #95C0E3;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h1 {color:#2c74ac; font-size:16px; font-weight:bold;}
+hr { margin-top:10px; margin-bottom:10px;}
+
+#bgimg { height:667px; width:100%; float:left; background-image:url(../img/bg.png); background-repeat:no-repeat;}
+
+/* Inicio da programação da div principal */
+#main { width:945px; margin-left:auto; margin-right:auto;}
+.main_container { margin-top:152px; }	
+.main_container_geral { }
+.principal_top { background-image:url(../img/bg_principal.png); width:947px; height:16px;}
+.principal_bottom { background-image:url(../img/bg_principal_btm.png); width:947px; height:16px;}
+
+.bg_principal_meio { background-image:url(../img/bg_principal_meio.png); background-repeat:repeat-y; width:949px;  }
+
+.bg_principal_meio_BACKUP { background-image:url(../img/bg_principal_meio.png); background-repeat:repeat-y; width:950px; padding-left:20px; padding-right:10px; padding-top:10px; padding-bottom:20px; margin-left:-8px;}
+	.bgpm_l { float:left; width:643px;}
+		.bgpm_l strong { color:#2c74ac;}
+
+	.bgpm_r { float:right; text-decoration:none; border:none; margin-right:15px;}
+		.bgpm_r a:link { text-decoration:none; border:none;}
+		.bgpm_r a:visited { text-decoration:none; border:none;}
+	.bgpm_r_1 { margin-top:10px; text-decoration:none;}
+.main_menu { width:696px; float:right; }
+	.main_menu_left { background-image:url(../img/menul.png); width:15px; height:43px; float:left;}
+	.main_menu_right { background-image:url(../img/menur.png); width:15px; height:43px; float:right;}
+	.main_menu_center { background-image:url(../img/bg_menu.png); width:666px; height:43px; float:left; font-size:14px; font-weight:bold;}
+		.main_menu_align { margin-top:12px;}
+			.main_menu_align a:link {color:#FFF; text-decoration:none; margin-left:20px;}
+			.main_menu_align a:visited { color:#FFF; text-decoration:none; margin-left:20px;}
+			.main_menu_align a:hover {color:#FFF; text-decoration:underline; margin-left:20px; }
+			.main_menu_align a:active {color:#FFF; text-decoration:none; margin-left:20px;}
+
+	
+/* Logo */
+#logo { width:297px; height:280px; background-image:url(../img/logo.png); background-repeat:no-repeat; position:absolute; z-index:1; top:-80px; }
+
+/* Formulário de Username e Senha do topo do site */
+#form1 { height:45px; width:576px; margin-left:auto;  margin-right:auto; background-image:url(../img/bgform1.png); color:#fff; font-size:11px; position:absolute; z-index:2; top:0; }
+	.form1_content { padding-top:7px; padding-left:25px; float:left;}
+		.form1_content_input { background-color:#cacaca; border:1px solid #7c7c7c; height:19px; margin-left:5px; width:90px;}
+	.btn_enviar { margin-top:7px; margin-left:4px;}
+		
+	.form1_makeatour { font-size:10px; float:right; padding-top:12px; padding-right:25px;}
+		.form1_makeatour a:link { text-decoration:underline; color:#fff;}
+		.form1_makeatour a:visited { text-decoration:underline; color:#fff;}
+		.form1_makeatour a:hover { text-decoration:none; color:#fff;}
+
+.fakehr { height:1px; background-color:#001d32; border-bottom:1px solid #7c7f81; margin-top:15px; margin-bottom:15px; }
+
+/* Serviços */
+.serv_a { float:left; }
+.serv_b { margin-left:180px; margin-right:200px; }
+.serv_c { float:right; margin-top:-157px; width:192px; }
+
+/* Web Bottom */
+#bottom { margin-top:5px;}
+.bottom_l { float:left; margin-top:25px; margin-left:25px; color:#ababab;}
+	.bottom_l a:link { color:#ababab; text-decoration:none;}
+	.bottom_l a:hover { color:#ababab; text-decoration:underline;}
+	.bottom_l a:visited { color:#ababab; text-decoration:none;}
+.bottom_r { float:right; margin-right:15px;}
+
+
+.borda_parceiros { border:3px solid #2c74ac;}
