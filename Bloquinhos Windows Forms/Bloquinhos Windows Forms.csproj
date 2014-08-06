@@ -144,56 +144,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="sons\acerto.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\amarelo.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\azul.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\erro.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\nome.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\perder.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\proximacor.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\verde.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\vermelho.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sons\vida.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="images\AMBER.png" />
     <Content Include="images\BLANK.png" />
     <Content Include="images\Brazil.png" />
@@ -212,8 +162,8 @@
     <Content Include="images\pause.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PysiLib\PysiLib.csproj">
-      <Project>{293D839C-DF23-4A2D-A3E2-5A22A0652D2C}</Project>
+    <ProjectReference Include="..\..\pysilib\PysiLib.csproj">
+      <Project>{293d839c-df23-4a2d-a3e2-5a22a0652d2c}</Project>
       <Name>PysiLib</Name>
     </ProjectReference>
   </ItemGroup>

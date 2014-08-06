@@ -1,0 +1,14 @@
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\bin\Debug\Bloquinhos.exe.config
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos Windows Forms.csprojResolveAssemblyReference.cache
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmLanguage.resources
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmNome.resources
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmPrincipal.resources
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmRecordes.resources
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmSerial.resources
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.Properties.Resources.resources
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos Windows Forms.csproj.GenerateResource.Cache
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\bin\Debug\PysiLib.dll
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos.exe
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos.pdb
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\bin\Debug\Bloquinhos.exe
+C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\bin\Debug\Bloquinhos.pdb

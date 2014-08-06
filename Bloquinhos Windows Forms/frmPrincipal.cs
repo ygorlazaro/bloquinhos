@@ -213,7 +213,7 @@ namespace BloquinhosWin
 
         private void FrmPrincipalLoad(object sender, EventArgs e)
         {
-            if (!Publico.Valido) Application.Exit();
+            //if (!Publico.Valido) Application.Exit();
 
             const string arquivo = "Scores.dat";
 
@@ -233,7 +233,7 @@ namespace BloquinhosWin
                 }
                 catch (Exception ex)
                 {
-                    Validacao.Mensagem(ex.Message);
+                    Validation.Message(ex.Message);
                 }
                 finally
                 {
@@ -259,7 +259,7 @@ namespace BloquinhosWin
             }
             catch (Exception ex)
             {
-                Validacao.Mensagem(ex.Message);
+                Validation.Message(ex.Message);
                 File.Delete(arquivo);
                 Application.Exit();
             }
@@ -410,7 +410,7 @@ namespace BloquinhosWin
             FrmLanguage f = new FrmLanguage();
             f.ShowDialog();
 
-            Validacao.Mensagem(Translation.Restart());
+            Validation.Message(Translation.Restart());
         }
 
         private void PicEscolhidoClick(object sender, EventArgs e)

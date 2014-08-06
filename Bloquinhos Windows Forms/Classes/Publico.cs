@@ -10,7 +10,7 @@ namespace BloquinhosWin.Classes
 
         public static string GerarPosCodigo(string precodigo)
         {
-            precodigo = Validacao.SomenteNumeros(precodigo, false);
+            precodigo = Validation.OnlyNumber(precodigo, false);
 
             string esqpre = precodigo.Substring(0, 18);
             string dirpre = precodigo.Substring(18, 18);
@@ -24,7 +24,7 @@ namespace BloquinhosWin.Classes
                 resultado += Math.Abs(esq - dir).ToString("00");
             }
 
-            resultado += Validacao.Inverso(resultado);
+            resultado += Validation.Inverse(resultado);
 
             return resultado;
         }
@@ -33,8 +33,8 @@ namespace BloquinhosWin.Classes
         {
             string resultado = null;
 
-            precodigo = Validacao.SomenteNumeros(precodigo, false);
-            poscodigo = Validacao.SomenteNumeros(poscodigo, false);
+            precodigo = Validation.OnlyNumber(precodigo, false);
+            poscodigo = Validation.OnlyNumber(poscodigo, false);
 
             string esqpre = precodigo.Substring(0, 18);
             string dirpre = precodigo.Substring(18, 18);
@@ -46,7 +46,7 @@ namespace BloquinhosWin.Classes
                 resultado += Math.Abs(esq - dir).ToString("00");
             }
 
-            resultado += Validacao.Inverso(resultado);
+            resultado += Validation.Inverse(resultado);
 
             return resultado == poscodigo;
         }

@@ -19,7 +19,7 @@ namespace BloquinhosWin
         {
             string ticks = DateTime.Now.Ticks.ToString();
 
-            _precodigo = ticks + Validacao.Inverso(ticks);
+            _precodigo = ticks + Validation.Inverse(ticks);
             txtPre.Text = _precodigo;
 
             label1.Text = Translation.IntroRegister();
@@ -32,13 +32,13 @@ namespace BloquinhosWin
             if (Publico.Validar(_precodigo, txtPos.Text))
             {
                 const string arquivo = @"pysikey.pysi";
-                File.WriteAllText(arquivo, Validacao.SomenteNumeros(_precodigo, false) + Validacao.SomenteNumeros(txtPos.Text, false));
-                Validacao.Mensagem(Translation.Registered());
+                File.WriteAllText(arquivo, Validation.OnlyNumber(_precodigo, false) + Validation.OnlyNumber(txtPos.Text, false));
+                Validation.Message(Translation.Registered());
                 Publico.Valido = true;
                 Hide();
             }
             else
-                Validacao.Mensagem(Translation.InvalidKey());
+                Validation.Message(Translation.InvalidKey());
         }
 
         private void BtnFecharClick(object sender, EventArgs e)

@@ -23,26 +23,26 @@ namespace BloquinhosWin
             Translation.Load();
 
 
-            if (!File.Exists(@"pysikey.pysi"))
-            {
-                FrmSerial f = new FrmSerial();
-                f.ShowDialog();
-            }
-            else
-            {
-                string conteudo = File.ReadAllText(@"pysikey.pysi");
-                string pre = conteudo.Substring(0, 36);
-                string pos = conteudo.Substring(36, 36);
+            //if (!File.Exists(@"pysikey.pysi"))
+            //{
+            //    FrmSerial f = new FrmSerial();
+            //    f.ShowDialog();
+            //}
+            //else
+            //{
+            //    string conteudo = File.ReadAllText(@"pysikey.pysi");
+            //    string pre = conteudo.Substring(0, 36);
+            //    string pos = conteudo.Substring(36, 36);
 
-                if (!Publico.Validar(pre, pos))
-                {
-                    Validacao.Mensagem(Translation.InvalidKey());
-                    FrmSerial f = new FrmSerial();
-                    f.ShowDialog();
-                }
-                else
-                    Publico.Valido = true;
-            }
+            //    if (!Publico.Validar(pre, pos))
+            //    {
+            //        Validation.Message(Translation.InvalidKey());
+            //        FrmSerial f = new FrmSerial();
+            //        f.ShowDialog();
+            //    }
+            //    else
+            //        Publico.Valido = true;
+            //}
 
             Application.Run(new FrmPrincipal());
         }
