@@ -1,0 +1,9 @@
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\bin\Debug\Bloquinhos.exe.config
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos Windows Forms.csprojResolveAssemblyReference.cache
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmLanguage.resources
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmNome.resources
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmPrincipal.resources
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmRecordes.resources
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.FrmSerial.resources
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\BloquinhosWin.Properties.Resources.resources
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos Windows Forms.csproj.GenerateResource.Cache

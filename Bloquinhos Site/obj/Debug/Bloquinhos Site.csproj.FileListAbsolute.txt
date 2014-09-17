@@ -1,0 +1,6 @@
+E:\BitBucket\bloquinhos\Bloquinhos Site\bin\Bloquinhos Site.dll.config
+E:\BitBucket\bloquinhos\Bloquinhos Site\bin\Bloquinhos Site.dll
+E:\BitBucket\bloquinhos\Bloquinhos Site\bin\Bloquinhos Site.pdb
+E:\BitBucket\bloquinhos\Bloquinhos Site\obj\Debug\Bloquinhos Site.csprojResolveAssemblyReference.cache
+E:\BitBucket\bloquinhos\Bloquinhos Site\obj\Debug\Bloquinhos Site.dll
+E:\BitBucket\bloquinhos\Bloquinhos Site\obj\Debug\Bloquinhos Site.pdb

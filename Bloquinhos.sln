@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloquinhosSL", "Bloquinhos\BloquinhosSL.csproj", "{D0F03140-9011-4CE0-91EB-B80471DD863B}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Bloquinhos Setup", "Bloquinhos Setup\Bloquinhos Setup.vdproj", "{E1BD7305-882A-4113-9221-F5A80384906D}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloquinhos Windows Forms", "Bloquinhos Windows Forms\Bloquinhos Windows Forms.csproj", "{AAF82F3C-7DFC-4966-B250-B4DFEF52CF82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PysiLib", "..\PysiLib\PysiLib.csproj", "{293D839C-DF23-4A2D-A3E2-5A22A0652D2C}"
@@ -21,27 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D0F03140-9011-4CE0-91EB-B80471DD863B}.Release|x86.ActiveCfg = Release|Any CPU
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Debug|Any CPU.ActiveCfg = Debug
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Debug|Any CPU.Build.0 = Debug
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Debug|x86.ActiveCfg = Debug
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Debug|x86.Build.0 = Debug
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Release|Any CPU.ActiveCfg = Release
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Release|Any CPU.Build.0 = Release
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Release|Mixed Platforms.ActiveCfg = Release
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Release|Mixed Platforms.Build.0 = Release
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Release|x86.ActiveCfg = Release
-		{E1BD7305-882A-4113-9221-F5A80384906D}.Release|x86.Build.0 = Release
 		{AAF82F3C-7DFC-4966-B250-B4DFEF52CF82}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{AAF82F3C-7DFC-4966-B250-B4DFEF52CF82}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{AAF82F3C-7DFC-4966-B250-B4DFEF52CF82}.Debug|Mixed Platforms.Build.0 = Debug|x86

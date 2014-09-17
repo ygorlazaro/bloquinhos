@@ -19,6 +19,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,8 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\conteudo.css" />
+    <Content Include="css\conteudo.min.css">
+      <DependentUpon>conteudo.css</DependentUpon>
+    </Content>
     <Content Include="css\estrutura.css" />
+    <Content Include="css\estrutura.min.css">
+      <DependentUpon>estrutura.css</DependentUpon>
+    </Content>
     <Content Include="css\lightbox.css" />
+    <Content Include="css\lightbox.min.css">
+      <DependentUpon>lightbox.css</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="img\bg.jpg" />
@@ -83,13 +97,29 @@
     <Content Include="img\projetos_bak.png" />
     <Content Include="jogueonline.aspx" />
     <Content Include="js\builder.js" />
+    <Content Include="js\builder.min.js">
+      <DependentUpon>builder.js</DependentUpon>
+    </Content>
     <Content Include="js\effects.js" />
+    <Content Include="js\effects.min.js">
+      <DependentUpon>effects.js</DependentUpon>
+    </Content>
     <Content Include="js\lightbox.js" />
+    <Content Include="js\lightbox.min.js">
+      <DependentUpon>lightbox.js</DependentUpon>
+    </Content>
     <Content Include="js\prototype.js" />
+    <Content Include="js\prototype.min.js">
+      <DependentUpon>prototype.js</DependentUpon>
+    </Content>
     <Content Include="js\scriptaculous.js" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="js\scriptaculous.min.js">
+      <DependentUpon>scriptaculous.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js">
+      <DependentUpon>jquery-1.4.1.js</DependentUpon>
+    </Content>
     <Content Include="sons\acerto.wav" />
     <Content Include="sons\acerto.wma" />
     <Content Include="sons\amarelo.wav" />
@@ -147,6 +177,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\builder.min.js.map">
+      <DependentUpon>builder.min.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\effects.min.js.map">
+      <DependentUpon>effects.min.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\lightbox.min.js.map">
+      <DependentUpon>lightbox.min.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\prototype.min.js.map">
+      <DependentUpon>prototype.min.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\scriptaculous.min.js.map">
+      <DependentUpon>scriptaculous.min.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.4.1.min.js.map">
+      <DependentUpon>jquery-1.4.1.min.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
