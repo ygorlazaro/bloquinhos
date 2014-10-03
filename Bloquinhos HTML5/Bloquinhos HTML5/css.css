@@ -1,20 +1,17 @@
-#corpo
-{
+#corpo {
 	width: 512px;
 	height: 512px;
 	border: 7px ridge black;
 	position: absolute;
 }
 
-#header
-{
-	width:512px;
+#header {
+	width: 512px;
 	border: solid 3px black;
 }
 
 
-.bloco
-{
+.bloco {
 	width: 62px;
 	height: 62px;
 	border: 1px solid black;
@@ -22,10 +19,8 @@
 	cursor: move;
 }
 
-#corEscolhida
-{
-	width:150px;
-	height:25px;
-	text-align:center;
-	
+#corEscolhida {
+	width: 150px;
+	height: 25px;
+	text-align: center;
 }

@@ -120,26 +120,6 @@
     <Content Include="Scripts\jquery-1.4.1.min.js">
       <DependentUpon>jquery-1.4.1.js</DependentUpon>
     </Content>
-    <Content Include="sons\acerto.wav" />
-    <Content Include="sons\acerto.wma" />
-    <Content Include="sons\amarelo.wav" />
-    <Content Include="sons\amarelo.wma" />
-    <Content Include="sons\azul.wav" />
-    <Content Include="sons\azul.wma" />
-    <Content Include="sons\erro.wav" />
-    <Content Include="sons\erro.wma" />
-    <Content Include="sons\nome.wav" />
-    <Content Include="sons\nome.wma" />
-    <Content Include="sons\perder.wav" />
-    <Content Include="sons\perder.wma" />
-    <Content Include="sons\proximacor.wav" />
-    <Content Include="sons\proximacor.wma" />
-    <Content Include="sons\verde.wav" />
-    <Content Include="sons\verde.wma" />
-    <Content Include="sons\vermelho.wav" />
-    <Content Include="sons\vermelho.wma" />
-    <Content Include="sons\vida.wav" />
-    <Content Include="sons\vida.wma" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

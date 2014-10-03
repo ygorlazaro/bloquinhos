@@ -1,28 +1,28 @@
 #region
 
-using System;
 using BloquinhosWin.Classes;
+using System;
 
 #endregion
 
 namespace BloquinhosWin
 {
-    internal sealed partial class FrmRecordes
-    {
-        internal FrmRecordes()
-        {
-            InitializeComponent();
-        }
+	internal sealed partial class FrmRecordes
+	{
+		internal FrmRecordes()
+		{
+			InitializeComponent();
+		}
 
-        private void BtnFecharClick(object sender, EventArgs e)
-        {
-            Close();
-        }
+		private void BtnFecharClick(object sender, EventArgs e)
+		{
+			Close();
+		}
 
-        private void FrmRecordes_Load(object sender, EventArgs e)
-        {
-            lblRecordes.Text = Translation.HighScores();
-            btnFechar.Text = Translation.Close();
-        }
-    }
+		private void FrmRecordes_Load(object sender, EventArgs e)
+		{
+			lblRecordes.Text = Translation.HighScores();
+			btnFechar.Text = Translation.Close();
+		}
+	}
 }
