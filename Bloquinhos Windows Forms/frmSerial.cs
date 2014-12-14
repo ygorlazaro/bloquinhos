@@ -17,7 +17,7 @@ namespace BloquinhosWin
 
 		private void FrmSerial_Load(object sender, EventArgs e)
 		{
-			string ticks = DateTime.Now.Ticks.ToString();
+			var ticks = DateTime.Now.Ticks.ToString();
 
 			_precodigo = ticks + Validation.Inverse(ticks);
 			txtPre.Text = _precodigo;

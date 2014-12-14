@@ -27,3 +27,5 @@ C:\Users\ygor.lazaro\Desktop\bloquinhos\Bloquinhos Windows Forms\bin\Debug\Bloqu
 E:\OneDrive\BitBucket\bloquinhos\Bloquinhos Windows Forms\bin\Debug\Bloquinhos.exe.config
 E:\OneDrive\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos.exe
 E:\OneDrive\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos.pdb
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos.exe
+E:\BitBucket\bloquinhos\Bloquinhos Windows Forms\obj\x86\Debug\Bloquinhos.pdb

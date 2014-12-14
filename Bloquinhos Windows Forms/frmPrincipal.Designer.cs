@@ -12,8 +12,17 @@ namespace BloquinhosWin
         [System.Diagnostics.DebuggerNonUserCode()]
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
-                components.Dispose();
+			if (disposing)
+			{
+				if (components != null)
+					components.Dispose();
+				if (_frmRecordes != null)
+					_frmRecordes.Dispose();
+				if (_lstNomes != null)
+					_lstNomes.Dispose();
+				if (_lstPontos != null)
+					_lstPontos.Dispose();
+			}
             base.Dispose(disposing);
         }
 

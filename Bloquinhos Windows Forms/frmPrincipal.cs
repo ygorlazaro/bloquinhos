@@ -52,7 +52,7 @@ namespace BloquinhosWin
 
 		private void EscolheCor(Control controle)
 		{
-			int numero = _randomCor.Next(4);
+			var numero = _randomCor.Next(4);
 
 			if (controle.BackgroundImage == null && controle.BackColor == Color.Black) return;
 			if (controle.BackgroundImage == _imagens[numero])
@@ -121,7 +121,7 @@ namespace BloquinhosWin
 			switch (_vidas)
 			{
 				case 0:
-					int posicao = 0;
+					var posicao = 0;
 					{
 						Timer1.Enabled = false;
 						if (!chkSom.Checked) _computer.Play(".\\sons\\perder.wav", AudioPlayMode.WaitToComplete);
@@ -151,21 +151,21 @@ namespace BloquinhosWin
 						if (posicao != 0)
 						{
 							if (!chkSom.Checked) _computer.Play(".\\sons\\nome.wav", AudioPlayMode.WaitToComplete);
-							FrmNome frmNome = new FrmNome();
-							frmNome.ShowDialog();
-
-							string vencedor = Publico.Nome;
+							using (var frmNome = new FrmNome())
+								frmNome.ShowDialog();
 
 							posicao -= 1;
 							_lstPontos.Items.Remove(9);
 							_lstNomes.Items.Remove(9);
 							_lstPontos.Items.Insert(posicao, _pontos);
-							_lstNomes.Items.Insert(posicao, vencedor);
+							_lstNomes.Items.Insert(posicao, Publico.Nome);
 
 							CarregaRecordes();
 							SalvarRecordes();
 						}
 					}
+					break;
+				default:
 					break;
 			}
 		}
@@ -173,7 +173,7 @@ namespace BloquinhosWin
 		private void AtualizaVidas()
 		{
 			lstVidas.Items.Clear();
-			for (int i = 0; i < _vidas; i++)
+			for (var i = 0; i < _vidas; i++)
 				lstVidas.Items.Add(new ListViewItem((i + 1).ToString(), 0));
 		}
 
@@ -218,7 +218,7 @@ namespace BloquinhosWin
 			const string arquivo = "Scores.dat";
 
 			int contador;
-			if (!(File.Exists(arquivo)))
+			if (!File.Exists(arquivo))
 			{
 				StreamWriter gravacao = null;
 				try
@@ -246,7 +246,7 @@ namespace BloquinhosWin
 			try
 			{
 				leitura = new StreamReader(arquivo);
-				string linha = leitura.ReadLine();
+				var linha = leitura.ReadLine();
 
 				while (linha != null)
 				{
@@ -287,7 +287,7 @@ namespace BloquinhosWin
 			Timer1.Enabled = !Timer1.Enabled;
 			btnNovoJogo.Enabled = !btnNovoJogo.Enabled;
 
-			bool congela = false;
+			var congela = false;
 
 			if (btnPausar.Text == Translation.Pause())
 				btnPausar.Text = Translation.Continue();
@@ -354,8 +354,7 @@ namespace BloquinhosWin
 			try
 			{
 				gravacao = new StreamWriter(arquivo);
-				int i;
-				for (i = 0; i <= 9; i++)
+				for (var i = 0; i <= 9; i++)
 				{
 					gravacao.WriteLine(_lstNomes.Items[i]);
 					gravacao.WriteLine(_lstPontos.Items[i]);
@@ -397,6 +396,8 @@ namespace BloquinhosWin
 					_computer.Play(".\\sons\\amarelo.wav");
 
 					break;
+				default:
+					break;
 			}
 		}
 
@@ -407,15 +408,15 @@ namespace BloquinhosWin
 
 		private void BtnLanguageClick(object sender, EventArgs e)
 		{
-			FrmLanguage f = new FrmLanguage();
-			f.ShowDialog();
+			using (var f = new FrmLanguage())
+				f.ShowDialog();
 
 			Validation.Message(Translation.Restart());
 		}
 
 		private void PicEscolhidoClick(object sender, EventArgs e)
 		{
-			for (int i = 0; i <= 3; i++)
+			for (var i = 0; i <= 3; i++)
 				if (_imagens[i] == picEscolhido.BackgroundImage)
 					FalarCor(i);
 		}

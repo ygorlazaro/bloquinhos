@@ -20,6 +20,8 @@ namespace BloquinhosWin.Classes
 					return "Enter with your name:";
 				case "pt":
 					return "Entre com seu nome:";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -32,6 +34,8 @@ namespace BloquinhosWin.Classes
 					return "Accept";
 				case "pt":
 					return "Aceitar";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -44,6 +48,8 @@ namespace BloquinhosWin.Classes
 					return "High scores";
 				case "pt":
 					return "Recordes";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -56,6 +62,8 @@ namespace BloquinhosWin.Classes
 					return "Close";
 				case "pt":
 					return "Fechar";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -68,6 +76,8 @@ namespace BloquinhosWin.Classes
 					return "Level";
 				case "pt":
 					return "Nível";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -80,6 +90,8 @@ namespace BloquinhosWin.Classes
 					return "Score";
 				case "pt":
 					return "Pontos";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -92,6 +104,8 @@ namespace BloquinhosWin.Classes
 					return "Choosed Item";
 				case "pt":
 					return "Item Escolhido";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -104,6 +118,8 @@ namespace BloquinhosWin.Classes
 					return "Speed";
 				case "pt":
 					return "Velocidade";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -116,6 +132,8 @@ namespace BloquinhosWin.Classes
 					return "New game";
 				case "pt":
 					return "Novo jogo";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -128,6 +146,8 @@ namespace BloquinhosWin.Classes
 					return "Pause";
 				case "pt":
 					return "Pausar";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -140,6 +160,8 @@ namespace BloquinhosWin.Classes
 					return "Time";
 				case "pt":
 					return "Tempo";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -152,6 +174,8 @@ namespace BloquinhosWin.Classes
 					return "Next Life";
 				case "pt":
 					return "Próxima Vida";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -164,6 +188,8 @@ namespace BloquinhosWin.Classes
 					return "Continue";
 				case "pt":
 					return "Continuar";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -176,6 +202,8 @@ namespace BloquinhosWin.Classes
 					return "Please, restart the game";
 				case "pt":
 					return "Por favor, reinicie o jogo";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -188,6 +216,8 @@ namespace BloquinhosWin.Classes
 					return "Your game is not registered. To play fully, enter with the serial at the field bellow:";
 				case "pt":
 					return "Seu jogo não está registrado. Para jogar completamente, entre com o serial no campo abaixo:";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -200,6 +230,8 @@ namespace BloquinhosWin.Classes
 					return "Validate";
 				case "pt":
 					return "Validar";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -212,6 +244,8 @@ namespace BloquinhosWin.Classes
 					return "Thanks for registering! Enjoy the game, and visite www.pysi.com.br for more information or support.";
 				case "pt":
 					return "Obrigado por registrar! Divirta-se, e visite www.pysi.com.br para mais informações ou suporte.";
+				default:
+					break;
 			}
 			return null;
 		}
@@ -224,6 +258,8 @@ namespace BloquinhosWin.Classes
 					return "Invalid code";
 				case "pt":
 					return "Serial inválido";
+				default:
+					break;
 			}
 			return null;
 		}
