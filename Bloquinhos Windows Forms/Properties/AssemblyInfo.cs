@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Bloquinhos")]
-[assembly: AssemblyDescription("www.pysi.com.br")]
+[assembly: AssemblyDescription("www.gatoninja.com.br")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Pysi Desenvolvimento")]
+[assembly: AssemblyCompany("Gato Ninja")]
 [assembly: AssemblyProduct("Bloquinhos")]
-[assembly: AssemblyCopyright("Copyright © Pysi Desenvolvimento 2010")]
+[assembly: AssemblyCopyright("Copyright © Gato Ninja")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

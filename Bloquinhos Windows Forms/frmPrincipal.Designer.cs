@@ -323,9 +323,9 @@ namespace BloquinhosWin
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(9, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 15);
+            this.label1.Size = new System.Drawing.Size(230, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pysi Desenvolvimento: http://www.pysi.com.br";
+            this.label1.Text = "Gato Ninja - www.gatoninja.com.br";
             // 
             // lblTempo
             // 
