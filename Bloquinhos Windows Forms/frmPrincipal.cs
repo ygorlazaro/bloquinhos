@@ -45,10 +45,11 @@ namespace BloquinhosWin
             }
         }
 
+        public Random Aleatorio = new Random(DateTime.Now.Millisecond);
+
         private void EmbaralhaCor(Control bloco)
         {
-            var random = new Random();
-            var indiceCor = random.Next(4);
+            var indiceCor = Aleatorio.Next(4);
             var corEscolhida = CoresDisponiveis[indiceCor];
 
             if (bloco.BackgroundImage == null && bloco.BackColor == Color.Black) return;
