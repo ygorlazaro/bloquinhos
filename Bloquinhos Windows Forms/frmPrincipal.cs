@@ -1,424 +1,174 @@
-#region
-
-using BloquinhosWin.Classes;
+using BloquinhosWin.Entities;
 using BloquinhosWin.Properties;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.Devices;
-using PysiLib;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-
-#endregion
+using System.Linq;
 
 namespace BloquinhosWin
 {
-	internal sealed partial class FrmPrincipal
-	{
-		private readonly Audio _computer = new Audio();
-		//private readonly Color[] _cores = new Color[5];
-		private readonly FrmRecordes _frmRecordes = new FrmRecordes();
-		private readonly ListBox _lstNomes = new ListBox();
-		private readonly ListBox _lstPontos = new ListBox();
-		private int _limiteTempo = 4000;
-		private int _nivel = 1;
-		private int _pontos;
-		private int _proximaVida = 10000;
-		private int _restantes = 64;
-		private int _vidas = 3;
-		private readonly Bitmap[] _imagens = new[] { Resources.AMBER, Resources.CLOUDS, Resources.CRIMSON, Resources.GREEN };
+    internal partial class FrmPrincipal
+    {
+        public Configuracoes Config { get; set; } = new Configuracoes();
 
-		internal FrmPrincipal()
-		{
-			InitializeComponent();
-		}
+        public List<Bitmap> CoresDisponiveis = new List<Bitmap>() {
+            Resources.AMBER,
+            Resources.CLOUDS,
+            Resources.CRIMSON,
+            Resources.GREEN
+        };
 
-		private void Timer1Tick(object sender, EventArgs e)
-		{
-			pbTempo.Value += 100;
-			pbTempo.Maximum = _limiteTempo;
-			AtualizaPainel();
+        public FrmPrincipal()
+        {
+            InitializeComponent();
+        }
 
-			if (pbTempo.Value != _limiteTempo) return;
-			pbTempo.Value = 0;
+        private void Timer1Tick(object sender, EventArgs e)
+        {
+            pbTempo.Value += 100;
+            pbTempo.Maximum = Config.LimiteTempo;
 
-			foreach (Control controle in Controls)
-				if ((controle) is PictureBox)
-					EscolheCor(controle);
-		}
+            AtualizaPainel();
 
-		private readonly Random _randomCor = new Random();
+            if (pbTempo.Value == Config.LimiteTempo)
+            {
+                pbTempo.Value = 0;
 
-		private void EscolheCor(Control controle)
-		{
-			var numero = _randomCor.Next(4);
+                foreach (Control controle in Controls)
+                {
+                    if (controle is PictureBox)
+                    {
+                        EmbaralhaCor(controle);
+                    }
+                }
+            }
+        }
 
-			if (controle.BackgroundImage == null && controle.BackColor == Color.Black) return;
-			if (controle.BackgroundImage == _imagens[numero])
-			{
-				EscolheCor(controle);
-				return;
-			}
-			controle.BackgroundImage = _imagens[numero];
+        private void EmbaralhaCor(Control bloco)
+        {
+            var random = new Random();
+            var indiceCor = random.Next(4);
+            var corEscolhida = CoresDisponiveis[indiceCor];
 
-			if (controle is Label)
-				FalarCor(numero);
-		}
+            if (bloco.BackgroundImage == null && bloco.BackColor == Color.Black) return;
 
-		private void Confere(Control objeto)
-		{
-			if (Timer1.Enabled != true) return;
-			if (objeto.BackgroundImage == null)
-				return;
+            if (bloco.BackgroundImage == corEscolhida)
+            {
+                EmbaralhaCor(bloco);
+            }
+            else
+            {
+                bloco.BackgroundImage = corEscolhida;
+            }
+        }
 
-			if (objeto.BackgroundImage == picEscolhido.BackgroundImage)
-			{
-				objeto.BackgroundImage = null;
-				objeto.BackColor = Color.Black;
-				_pontos += (50 * _nivel);
-				_restantes -= 1;
-				if (!chkSom.Checked) _computer.Play(".\\sons\\acerto.wav");
-			}
-			else
-			{
-				_pontos -= (80 * _nivel);
-				if (_pontos < 0) _pontos = 0;
-				_vidas -= 1;
-				AtualizaVidas();
-				if (!chkSom.Checked) _computer.Play(".\\sons\\erro.wav", AudioPlayMode.WaitToComplete);
-			}
+        private void BlocoClicado(Control bloco)
+        {
+            if (Timer1.Enabled && bloco.BackgroundImage != null)
+            {
+                if (bloco.BackgroundImage == picEscolhido.BackgroundImage)
+                {
+                    bloco.BackgroundImage = null;
+                    bloco.BackColor = Color.Black;
 
-			if (_pontos > _proximaVida)
-			{
-				_proximaVida += Convert.ToInt32((_pontos * 0.15) + 10000);
-				_vidas += 1;
-				AtualizaVidas();
-				if (!chkSom.Checked) _computer.Play(".\\sons\\vida.wav", AudioPlayMode.WaitToComplete);
-			}
+                    Config.CliqueCerto();
+                }
+                else
+                {
+                    Config.CliqueErrado();
+                }
 
-			if (_restantes == 0)
-			{
-				_limiteTempo -= _limiteTempo > 2000 ? 300 : (_limiteTempo > 1000 ? 200 : 100);
+                AtualizaVidas();
 
-				if (_limiteTempo < 300)
-					_limiteTempo = 300;
+                if (Config.IsProximoNivel())
+                {
+                    pbTempo.Value = 0;
 
-				pbTempo.Value = 0;
+                    foreach (Control controle in Controls)
+                        if (controle is PictureBox)
+                            controle.BackColor = Color.White;
 
-				_restantes = 64;
+                    EmbaralhaCor(picEscolhido);
+                }
 
-				foreach (Control controle in Controls)
-					if (controle is PictureBox)
-						controle.BackColor = Color.White;
+                AtualizaPainel();
 
-				EscolheCor(picEscolhido);
-				_nivel += 1;
-			}
+                if (Config.Vidas == 0)
+                {
+                    Timer1.Enabled = false;
+                    btnPausar.Enabled = false;
 
-			AtualizaPainel();
+                    MessageBox.Show("Fim de jogo");
+                }
+            }
+        }
 
-			switch (_vidas)
-			{
-				case 0:
-					var posicao = 0;
-					{
-						Timer1.Enabled = false;
-						if (!chkSom.Checked) _computer.Play(".\\sons\\perder.wav", AudioPlayMode.WaitToComplete);
-						btnPausar.Enabled = false;
+        private void AtualizaVidas()
+        {
+            lstVidas.Items.Clear();
 
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[9].ToString()))
-							posicao = 10;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[8].ToString()))
-							posicao = 9;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[7].ToString()))
-							posicao = 8;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[6].ToString()))
-							posicao = 7;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[5].ToString()))
-							posicao = 6;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[4].ToString()))
-							posicao = 5;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[3].ToString()))
-							posicao = 4;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[2].ToString()))
-							posicao = 3;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[1].ToString()))
-							posicao = 2;
-						if (_pontos > Convert.ToInt32(_lstPontos.Items[0].ToString()))
-							posicao = 1;
+            var vidas = Enumerable.Range(1, Config.Vidas)
+                        .Select(index => new ListViewItem(index.ToString()))
+                        .ToArray();
 
-						if (posicao != 0)
-						{
-							if (!chkSom.Checked) _computer.Play(".\\sons\\nome.wav", AudioPlayMode.WaitToComplete);
-							using (var frmNome = new FrmNome())
-								frmNome.ShowDialog();
+            lstVidas.Items.AddRange(vidas);
+        }
 
-							posicao -= 1;
-							_lstPontos.Items.Remove(9);
-							_lstNomes.Items.Remove(9);
-							_lstPontos.Items.Insert(posicao, _pontos);
-							_lstNomes.Items.Insert(posicao, Publico.Nome);
+        private void AtualizaPainel()
+        {
+            lblNivel.Text = $"Nível {Config.Nivel}";
+            lblPontos.Text = Config.Pontos.ToString();
 
-							CarregaRecordes();
-							SalvarRecordes();
-						}
-					}
-					break;
-				default:
-					break;
-			}
-		}
+            pbProximaVida.Maximum = Config.ProximaVida;
+            pbProximaVida.Value = Config.Pontos;
+        }
 
-		private void AtualizaVidas()
-		{
-			lstVidas.Items.Clear();
-			for (var i = 0; i < _vidas; i++)
-				lstVidas.Items.Add(new ListViewItem((i + 1).ToString(), 0));
-		}
+        private void NovoJogo()
+        {
+            Config = new Configuracoes();
 
-		private void AtualizaPainel()
-		{
-			lblNivel.Text = string.Format("{0}: {1}", Translation.Level(), _nivel);
-			lblPontos.Text = _pontos.ToString();
+            pbTempo.Value = 0;
+            pbTempo.Maximum = Config.LimiteTempo;
 
-			pbProximaVida.Maximum = _proximaVida;
-			pbProximaVida.Value = _pontos;
-		}
+            foreach (Control controle in Controls)
+                if (controle is PictureBox)
+                    controle.BackColor = Color.White;
 
-		private void NovoJogo()
-		{
-			_restantes = 64;
-			_limiteTempo = 4000;
-			pbTempo.Value = 0;
-			pbTempo.Maximum = _limiteTempo;
-			_vidas = 3;
-			_pontos = 0;
-			_nivel = 1;
-			_proximaVida = 10000;
+            AtualizaVidas();
 
-			foreach (Control controle in Controls)
-				if (controle is PictureBox)
-					controle.BackColor = Color.White;
+            Timer1.Enabled = true;
+            EmbaralhaCor(picEscolhido);
 
-			AtualizaVidas();
+            AtualizaPainel();
 
-			Timer1.Enabled = true;
-			EscolheCor(picEscolhido);
+            btnPausar.Enabled = true;
+        }
 
-			AtualizaPainel();
+        private void BtnPausarClick(object sender, EventArgs e)
+        {
+            Timer1.Enabled = !Timer1.Enabled;
+            btnNovoJogo.Enabled = !btnNovoJogo.Enabled;
 
-			btnPausar.Enabled = true;
-		}
+            foreach (Control controle in Controls)
+                if (controle is PictureBox)
+                    controle.Visible = Timer1.Enabled;
+        }
 
-		private void FrmPrincipalLoad(object sender, EventArgs e)
-		{
-			//if (!Publico.Valido) Application.Exit();
+        private void P1Click1(object sender, EventArgs e)
+        {
+            BlocoClicado((Control)sender);
+        }
 
-			const string arquivo = "Scores.dat";
+        private void BtnNovoJogoClick1(object sender, EventArgs e)
+        {
+            NovoJogo();
+        }
 
-			int contador;
-			if (!File.Exists(arquivo))
-			{
-				StreamWriter gravacao = null;
-				try
-				{
-					gravacao = new StreamWriter(arquivo);
-
-					for (contador = 10; contador >= 1; contador--)
-					{
-						gravacao.WriteLine("Player");
-						gravacao.WriteLine((5000 * contador).ToString());
-					}
-				}
-				catch (Exception ex)
-				{
-					Validation.Message(ex.Message);
-				}
-				finally
-				{
-					if (gravacao != null) gravacao.Close();
-				}
-			}
-
-			StreamReader leitura = null;
-			contador = 0;
-			try
-			{
-				leitura = new StreamReader(arquivo);
-				var linha = leitura.ReadLine();
-
-				while (linha != null)
-				{
-					_lstNomes.Items.Add(linha);
-					linha = leitura.ReadLine();
-					_lstPontos.Items.Add(linha);
-					linha = leitura.ReadLine();
-					contador += 1;
-				}
-			}
-			catch (Exception ex)
-			{
-				Validation.Message(ex.Message);
-				File.Delete(arquivo);
-				Application.Exit();
-			}
-			finally
-			{
-				if (leitura != null) leitura.Close();
-			}
-
-			CarregaRecordes();
-
-			lblNivel.Text = Translation.Level();
-			lblPontos.Text = Translation.Score();
-			btnNovoJogo.Text = Translation.NewGame();
-			btnPausar.Text = Translation.Pause();
-			btnRecordes.Text = Translation.HighScores();
-			btnFechar.Text = Translation.Close();
-			lblTempo.Text = Translation.Time();
-			lblNextLife.Text = Translation.NextLife();
-			lblItemEscolhido.Text = Translation.ChoosedItem();
-
-		}
-
-		private void BtnPausarClick(object sender, EventArgs e)
-		{
-			Timer1.Enabled = !Timer1.Enabled;
-			btnNovoJogo.Enabled = !btnNovoJogo.Enabled;
-
-			var congela = false;
-
-			if (btnPausar.Text == Translation.Pause())
-				btnPausar.Text = Translation.Continue();
-			else
-			{
-				btnPausar.Text = Translation.Pause();
-				congela = true;
-			}
-
-			foreach (Control controle in Controls)
-				if (controle is PictureBox)
-					controle.Visible = congela;
-		}
-
-		private void P1Click1(object sender, EventArgs e)
-		{
-			Confere((Control)sender);
-		}
-
-		private void BtnNovoJogoClick1(object sender, EventArgs e)
-		{
-			NovoJogo();
-		}
-
-		private void BtnRecordesClick(object sender, EventArgs e)
-		{
-			CarregaRecordes();
-		}
-
-		private void CarregaRecordes()
-		{
-			_frmRecordes.lblNome1.Text = _lstNomes.Items[0].ToString();
-			_frmRecordes.lblPontos1.Text = _lstPontos.Items[0].ToString();
-			_frmRecordes.lblNome2.Text = _lstNomes.Items[1].ToString();
-			_frmRecordes.lblPontos2.Text = _lstPontos.Items[1].ToString();
-			_frmRecordes.lblNome3.Text = _lstNomes.Items[2].ToString();
-			_frmRecordes.lblPontos3.Text = _lstPontos.Items[2].ToString();
-			_frmRecordes.lblNome4.Text = _lstNomes.Items[3].ToString();
-			_frmRecordes.lblPontos4.Text = _lstPontos.Items[3].ToString();
-			_frmRecordes.lblNome5.Text = _lstNomes.Items[4].ToString();
-			_frmRecordes.lblPontos5.Text = _lstPontos.Items[4].ToString();
-			_frmRecordes.lblNome6.Text = _lstNomes.Items[5].ToString();
-			_frmRecordes.lblPontos6.Text = _lstPontos.Items[5].ToString();
-			_frmRecordes.lblNome7.Text = _lstNomes.Items[6].ToString();
-			_frmRecordes.lblPontos7.Text = _lstPontos.Items[6].ToString();
-			_frmRecordes.lblNome8.Text = _lstNomes.Items[7].ToString();
-			_frmRecordes.lblPontos8.Text = _lstPontos.Items[7].ToString();
-			_frmRecordes.lblNome9.Text = _lstNomes.Items[8].ToString();
-			_frmRecordes.lblPontos9.Text = _lstPontos.Items[8].ToString();
-			_frmRecordes.lblNome10.Text = _lstNomes.Items[9].ToString();
-			_frmRecordes.lblPontos10.Text = _lstPontos.Items[9].ToString();
-
-			_frmRecordes.ShowDialog();
-		}
-
-		private void SalvarRecordes()
-		{
-			const string arquivo = "Scores.dat";
-
-			if (File.Exists(arquivo))
-				File.Delete(arquivo);
-			StreamWriter gravacao = null;
-
-			try
-			{
-				gravacao = new StreamWriter(arquivo);
-				for (var i = 0; i <= 9; i++)
-				{
-					gravacao.WriteLine(_lstNomes.Items[i]);
-					gravacao.WriteLine(_lstPontos.Items[i]);
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-			finally
-			{
-				if (gravacao != null) gravacao.Close();
-			}
-		}
-
-		private void BtnFecharClick(object sender, EventArgs e)
-		{
-			Close();
-			Application.Exit();
-		}
-
-		private void FalarCor(int numero)
-		{
-			if (chkSom.Checked) return;
-			_computer.Play(".\\sons\\proximacor.wav", AudioPlayMode.WaitToComplete);
-
-			switch (numero)
-			{
-				case 0:
-					_computer.Play(".\\sons\\vermelho.wav");
-					break;
-				case 1:
-					_computer.Play(".\\sons\\azul.wav");
-					break;
-				case 2:
-					_computer.Play(".\\sons\\verde.wav");
-					break;
-				case 3:
-					_computer.Play(".\\sons\\amarelo.wav");
-
-					break;
-				default:
-					break;
-			}
-		}
-
-		private void ChkSomCheckedChanged(object sender, EventArgs e)
-		{
-			chkSom.Image = chkSom.Checked ? Resources.soundoff : Resources.soundon;
-		}
-
-		private void BtnLanguageClick(object sender, EventArgs e)
-		{
-			using (var f = new FrmLanguage())
-				f.ShowDialog();
-
-			Validation.Message(Translation.Restart());
-		}
-
-		private void PicEscolhidoClick(object sender, EventArgs e)
-		{
-			for (var i = 0; i <= 3; i++)
-				if (_imagens[i] == picEscolhido.BackgroundImage)
-					FalarCor(i);
-		}
-	}
+        private void BtnFecharClick(object sender, EventArgs e)
+        {
+            Close();
+            Application.Exit();
+        }
+    }
 }

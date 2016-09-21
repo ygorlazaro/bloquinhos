@@ -16,12 +16,6 @@ namespace BloquinhosWin
 			{
 				if (components != null)
 					components.Dispose();
-				if (_frmRecordes != null)
-					_frmRecordes.Dispose();
-				if (_lstNomes != null)
-					_lstNomes.Dispose();
-				if (_lstPontos != null)
-					_lstPontos.Dispose();
 			}
             base.Dispose(disposing);
         }
@@ -42,8 +36,6 @@ namespace BloquinhosWin
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.lblItemEscolhido = new System.Windows.Forms.Label();
             this.picEscolhido = new System.Windows.Forms.PictureBox();
-            this.btnLanguage = new System.Windows.Forms.Button();
-            this.chkSom = new System.Windows.Forms.CheckBox();
             this.lstVidas = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnFechar = new System.Windows.Forms.Button();
@@ -51,7 +43,6 @@ namespace BloquinhosWin
             this.lblPontos = new System.Windows.Forms.Label();
             this.lblNivel = new System.Windows.Forms.Label();
             this.btnPausar = new System.Windows.Forms.Button();
-            this.btnRecordes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTempo = new System.Windows.Forms.Label();
             this.pbProximaVida = new System.Windows.Forms.ProgressBar();
@@ -197,7 +188,7 @@ namespace BloquinhosWin
             this.pbTempo.Location = new System.Drawing.Point(116, 471);
             this.pbTempo.Maximum = 6000;
             this.pbTempo.Name = "pbTempo";
-            this.pbTempo.Size = new System.Drawing.Size(278, 23);
+            this.pbTempo.Size = new System.Drawing.Size(337, 23);
             this.pbTempo.Step = 300;
             this.pbTempo.TabIndex = 2;
             // 
@@ -206,14 +197,12 @@ namespace BloquinhosWin
             this.GroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.GroupBox1.Controls.Add(this.lblItemEscolhido);
             this.GroupBox1.Controls.Add(this.picEscolhido);
-            this.GroupBox1.Controls.Add(this.btnLanguage);
             this.GroupBox1.Controls.Add(this.lstVidas);
             this.GroupBox1.Controls.Add(this.btnFechar);
             this.GroupBox1.Controls.Add(this.btnNovoJogo);
             this.GroupBox1.Controls.Add(this.lblPontos);
             this.GroupBox1.Controls.Add(this.lblNivel);
             this.GroupBox1.Controls.Add(this.btnPausar);
-            this.GroupBox1.Controls.Add(this.btnRecordes);
             this.GroupBox1.Location = new System.Drawing.Point(469, 12);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(291, 518);
@@ -242,30 +231,6 @@ namespace BloquinhosWin
             this.picEscolhido.Size = new System.Drawing.Size(84, 84);
             this.picEscolhido.TabIndex = 91;
             this.picEscolhido.TabStop = false;
-            this.picEscolhido.Click += new System.EventHandler(this.PicEscolhidoClick);
-            // 
-            // btnLanguage
-            // 
-            this.btnLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLanguage.Image = global::BloquinhosWin.Properties.Resources.network;
-            this.btnLanguage.Location = new System.Drawing.Point(217, 98);
-            this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(54, 54);
-            this.btnLanguage.TabIndex = 3;
-            this.btnLanguage.UseVisualStyleBackColor = true;
-            this.btnLanguage.Click += new System.EventHandler(this.BtnLanguageClick);
-            // 
-            // chkSom
-            // 
-            this.chkSom.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkSom.AutoSize = true;
-            this.chkSom.Image = global::BloquinhosWin.Properties.Resources.soundon;
-            this.chkSom.Location = new System.Drawing.Point(400, 471);
-            this.chkSom.Name = "chkSom";
-            this.chkSom.Size = new System.Drawing.Size(54, 54);
-            this.chkSom.TabIndex = 5;
-            this.chkSom.UseVisualStyleBackColor = true;
-            this.chkSom.CheckedChanged += new System.EventHandler(this.ChkSomCheckedChanged);
             // 
             // lstVidas
             // 
@@ -352,20 +317,6 @@ namespace BloquinhosWin
             this.btnPausar.UseVisualStyleBackColor = true;
             this.btnPausar.Click += new System.EventHandler(this.BtnPausarClick);
             // 
-            // btnRecordes
-            // 
-            this.btnRecordes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecordes.Image = global::BloquinhosWin.Properties.Resources.records;
-            this.btnRecordes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecordes.Location = new System.Drawing.Point(201, 338);
-            this.btnRecordes.Name = "btnRecordes";
-            this.btnRecordes.Size = new System.Drawing.Size(84, 84);
-            this.btnRecordes.TabIndex = 6;
-            this.btnRecordes.Text = "&Recordes";
-            this.btnRecordes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRecordes.UseVisualStyleBackColor = true;
-            this.btnRecordes.Click += new System.EventHandler(this.BtnRecordesClick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -391,7 +342,7 @@ namespace BloquinhosWin
             this.pbProximaVida.Location = new System.Drawing.Point(117, 500);
             this.pbProximaVida.Maximum = 6000;
             this.pbProximaVida.Name = "pbProximaVida";
-            this.pbProximaVida.Size = new System.Drawing.Size(277, 26);
+            this.pbProximaVida.Size = new System.Drawing.Size(336, 26);
             this.pbProximaVida.Step = 300;
             this.pbProximaVida.TabIndex = 4;
             // 
@@ -1182,7 +1133,6 @@ namespace BloquinhosWin
             this.Controls.Add(this.lblNextLife);
             this.Controls.Add(this.pbProximaVida);
             this.Controls.Add(this.lblTempo);
-            this.Controls.Add(this.chkSom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.P64);
             this.Controls.Add(this.P63);
@@ -1256,7 +1206,6 @@ namespace BloquinhosWin
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
-            this.Load += new System.EventHandler(this.FrmPrincipalLoad);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picEscolhido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P64)).EndInit();
@@ -1329,7 +1278,6 @@ namespace BloquinhosWin
         }
         internal System.Windows.Forms.Timer Timer1;
         internal System.Windows.Forms.ProgressBar pbTempo;
-        internal System.Windows.Forms.Button btnRecordes;
         internal System.Windows.Forms.Button btnPausar;
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.PictureBox P9;
@@ -1406,8 +1354,6 @@ namespace BloquinhosWin
         internal Label lblNextLife;
         private ListView lstVidas;
         private ImageList imageList1;
-        private CheckBox chkSom;
-        internal Button btnLanguage;
         internal PictureBox picEscolhido;
         internal Label lblItemEscolhido;
 

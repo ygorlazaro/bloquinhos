@@ -213,3 +213,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+.vs/
+bin/
+obj/
+Debug/
+Release/
