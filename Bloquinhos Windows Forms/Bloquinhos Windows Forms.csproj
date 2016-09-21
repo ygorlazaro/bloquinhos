@@ -116,14 +116,10 @@
     <Content Include="images\BLANK.png" />
     <Content Include="images\CLOUDS.png" />
     <Content Include="images\CRIMSON.png" />
-    <Content Include="images\dollar.png" />
     <Content Include="images\GREEN.png" />
     <Content Include="images\lives.png" />
     <None Include="images\network.png" />
-    <Content Include="images\records.png" />
     <Content Include="images\close.png" />
-    <Content Include="images\soundon.png" />
-    <Content Include="images\soundoff.png" />
     <Content Include="images\news.png" />
     <Content Include="images\pause.png" />
   </ItemGroup>
