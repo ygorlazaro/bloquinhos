@@ -1,0 +1,34 @@
+{
+    "name": "bloquinhos",
+    "version": "1.0.0",
+    "description": "Joguinho feito por [Ygor Lazaro](http://www.github.com/ygorlazaro) na época da Pysi.",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ygorlazaro/bloquinhos.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ygorlazaro/bloquinhos/issues"
+    },
+    "homepage": "https://github.com/ygorlazaro/bloquinhos#readme",
+    "devDependencies": {
+        "@types/react": "^16.3.10",
+        "jest": "^22.4.3",
+        "parcel-bundler": "^1.7.0",
+        "typescript": "^2.8.1"
+    },
+    "dependencies": {
+        "@types/react-dom": "^16.0.5",
+        "antd": "^3.4.1",
+        "react": "^16.0.0",
+        "react-dom": "^16.3.1"
+    }
+}

@@ -218,3 +218,6 @@ bin/
 obj/
 Debug/
 Release/
+node_modules
+.cache
+dist
