@@ -20,15 +20,15 @@
     },
     "homepage": "https://github.com/ygorlazaro/bloquinhos#readme",
     "devDependencies": {
-        "@types/react": "^16.3.10",
-        "jest": "^22.4.3",
-        "parcel-bundler": "^1.7.0",
-        "typescript": "^2.8.1"
+        "@types/react": "^16.9.51",
+        "jest": "^26.5.2",
+        "parcel-bundler": "^1.12.4",
+        "typescript": "^4.0.3"
     },
     "dependencies": {
-        "@types/react-dom": "^16.0.5",
-        "antd": "^3.4.1",
-        "react": "^16.0.0",
-        "react-dom": "^16.3.1"
+        "@types/react-dom": "^16.9.8",
+        "antd": "^4.6.6",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
     }
 }
