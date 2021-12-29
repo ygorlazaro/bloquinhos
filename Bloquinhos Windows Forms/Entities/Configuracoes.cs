@@ -26,12 +26,12 @@ namespace BloquinhosWin.Entities
             Vidas = 3;
         }
 
-        internal void CliqueCerto()
+        internal bool CliqueCerto()
         {
             Pontos += (50 * Nivel);
             BlocosRestantes -= 1;
 
-            Validacoes();
+            return Validacoes();
         }
 
         internal void CliqueErrado()
@@ -47,9 +47,9 @@ namespace BloquinhosWin.Entities
             Validacoes();
         }
 
-        private void Validacoes()
+        private bool Validacoes()
         {
-            ValidaVidaBonus();
+            return ValidaVidaBonus();
         }
 
         public bool IsProximoNivel()
@@ -71,13 +71,17 @@ namespace BloquinhosWin.Entities
             return false;
         }
 
-        private void ValidaVidaBonus()
+        private bool ValidaVidaBonus()
         {
             if (Pontos > ProximaVida)
             {
                 ProximaVida += Convert.ToInt32((Pontos * 0.15) + 10000);
                 Vidas += 1;
+
+                return true;
             }
+
+            return false;
         }
     }
 }

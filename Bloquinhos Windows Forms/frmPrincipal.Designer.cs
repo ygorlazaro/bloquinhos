@@ -35,18 +35,14 @@ namespace BloquinhosWin
             this.pbTempo = new System.Windows.Forms.ProgressBar();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.lblItemEscolhido = new System.Windows.Forms.Label();
-            this.picEscolhido = new System.Windows.Forms.PictureBox();
             this.lstVidas = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnNovoJogo = new System.Windows.Forms.Button();
             this.lblPontos = new System.Windows.Forms.Label();
             this.lblNivel = new System.Windows.Forms.Label();
-            this.btnPausar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTempo = new System.Windows.Forms.Label();
             this.pbProximaVida = new System.Windows.Forms.ProgressBar();
             this.lblNextLife = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.P64 = new System.Windows.Forms.PictureBox();
             this.P63 = new System.Windows.Forms.PictureBox();
             this.P62 = new System.Windows.Forms.PictureBox();
@@ -111,8 +107,12 @@ namespace BloquinhosWin
             this.P3 = new System.Windows.Forms.PictureBox();
             this.P2 = new System.Windows.Forms.PictureBox();
             this.P1 = new System.Windows.Forms.PictureBox();
+            this.btnRanking = new System.Windows.Forms.Button();
+            this.picEscolhido = new System.Windows.Forms.PictureBox();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnNovoJogo = new System.Windows.Forms.Button();
+            this.btnPausar = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEscolhido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P63)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P62)).BeginInit();
@@ -177,6 +177,7 @@ namespace BloquinhosWin
             ((System.ComponentModel.ISupportInitialize)(this.P3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEscolhido)).BeginInit();
             this.SuspendLayout();
             // 
             // Timer1
@@ -195,6 +196,7 @@ namespace BloquinhosWin
             // GroupBox1
             // 
             this.GroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBox1.Controls.Add(this.btnRanking);
             this.GroupBox1.Controls.Add(this.lblItemEscolhido);
             this.GroupBox1.Controls.Add(this.picEscolhido);
             this.GroupBox1.Controls.Add(this.lstVidas);
@@ -221,20 +223,10 @@ namespace BloquinhosWin
             this.lblItemEscolhido.Text = "Item escolhido";
             this.lblItemEscolhido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picEscolhido
-            // 
-            this.picEscolhido.BackColor = System.Drawing.Color.White;
-            this.picEscolhido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEscolhido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picEscolhido.Location = new System.Drawing.Point(57, 428);
-            this.picEscolhido.Name = "picEscolhido";
-            this.picEscolhido.Size = new System.Drawing.Size(84, 84);
-            this.picEscolhido.TabIndex = 91;
-            this.picEscolhido.TabStop = false;
-            // 
             // lstVidas
             // 
             this.lstVidas.Enabled = false;
+            this.lstVidas.HideSelection = false;
             this.lstVidas.LargeImageList = this.imageList1;
             this.lstVidas.Location = new System.Drawing.Point(6, 96);
             this.lstVidas.Name = "lstVidas";
@@ -249,34 +241,6 @@ namespace BloquinhosWin
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "lives.png");
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.Image = global::BloquinhosWin.Properties.Resources.close;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFechar.Location = new System.Drawing.Point(201, 428);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(84, 84);
-            this.btnFechar.TabIndex = 7;
-            this.btnFechar.Text = "&Fechar";
-            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.BtnFecharClick);
-            // 
-            // btnNovoJogo
-            // 
-            this.btnNovoJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovoJogo.Image = global::BloquinhosWin.Properties.Resources.news;
-            this.btnNovoJogo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNovoJogo.Location = new System.Drawing.Point(202, 158);
-            this.btnNovoJogo.Name = "btnNovoJogo";
-            this.btnNovoJogo.Size = new System.Drawing.Size(84, 84);
-            this.btnNovoJogo.TabIndex = 4;
-            this.btnNovoJogo.Text = "&Novo jogo";
-            this.btnNovoJogo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNovoJogo.UseVisualStyleBackColor = true;
-            this.btnNovoJogo.Click += new System.EventHandler(this.BtnNovoJogoClick1);
             // 
             // lblPontos
             // 
@@ -302,31 +266,6 @@ namespace BloquinhosWin
             this.lblNivel.Text = "Nível:";
             this.lblNivel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnPausar
-            // 
-            this.btnPausar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPausar.Enabled = false;
-            this.btnPausar.Image = global::BloquinhosWin.Properties.Resources.pause;
-            this.btnPausar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPausar.Location = new System.Drawing.Point(201, 248);
-            this.btnPausar.Name = "btnPausar";
-            this.btnPausar.Size = new System.Drawing.Size(84, 84);
-            this.btnPausar.TabIndex = 5;
-            this.btnPausar.Text = "&Pausar";
-            this.btnPausar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPausar.UseVisualStyleBackColor = true;
-            this.btnPausar.Click += new System.EventHandler(this.BtnPausarClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(9, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gato Ninja - www.gatoninja.com.br";
-            // 
             // lblTempo
             // 
             this.lblTempo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -342,7 +281,7 @@ namespace BloquinhosWin
             this.pbProximaVida.Location = new System.Drawing.Point(117, 500);
             this.pbProximaVida.Maximum = 6000;
             this.pbProximaVida.Name = "pbProximaVida";
-            this.pbProximaVida.Size = new System.Drawing.Size(336, 26);
+            this.pbProximaVida.Size = new System.Drawing.Size(169, 26);
             this.pbProximaVida.Step = 300;
             this.pbProximaVida.TabIndex = 4;
             // 
@@ -355,6 +294,15 @@ namespace BloquinhosWin
             this.lblNextLife.TabIndex = 3;
             this.lblNextLife.Text = "Próxima vida";
             this.lblNextLife.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(292, 506);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 15);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "0/0";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // P64
             // 
@@ -1124,16 +1072,83 @@ namespace BloquinhosWin
             this.P1.TabStop = false;
             this.P1.Click += new System.EventHandler(this.P1Click1);
             // 
+            // btnRanking
+            // 
+            this.btnRanking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRanking.Image = global::BloquinhosWin.Properties.Resources.ranking;
+            this.btnRanking.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRanking.Location = new System.Drawing.Point(200, 276);
+            this.btnRanking.Name = "btnRanking";
+            this.btnRanking.Size = new System.Drawing.Size(84, 84);
+            this.btnRanking.TabIndex = 92;
+            this.btnRanking.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRanking.UseVisualStyleBackColor = true;
+            this.btnRanking.Click += new System.EventHandler(this.btnRanking_Click);
+            // 
+            // picEscolhido
+            // 
+            this.picEscolhido.BackColor = System.Drawing.Color.White;
+            this.picEscolhido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEscolhido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picEscolhido.Location = new System.Drawing.Point(57, 428);
+            this.picEscolhido.Name = "picEscolhido";
+            this.picEscolhido.Size = new System.Drawing.Size(84, 84);
+            this.picEscolhido.TabIndex = 91;
+            this.picEscolhido.TabStop = false;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.Image = global::BloquinhosWin.Properties.Resources.close;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFechar.Location = new System.Drawing.Point(201, 428);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(84, 84);
+            this.btnFechar.TabIndex = 7;
+            this.btnFechar.Text = "&Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.BtnFecharClick);
+            // 
+            // btnNovoJogo
+            // 
+            this.btnNovoJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovoJogo.Image = global::BloquinhosWin.Properties.Resources.news;
+            this.btnNovoJogo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNovoJogo.Location = new System.Drawing.Point(201, 96);
+            this.btnNovoJogo.Name = "btnNovoJogo";
+            this.btnNovoJogo.Size = new System.Drawing.Size(84, 84);
+            this.btnNovoJogo.TabIndex = 4;
+            this.btnNovoJogo.Text = "&Novo jogo";
+            this.btnNovoJogo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovoJogo.UseVisualStyleBackColor = true;
+            this.btnNovoJogo.Click += new System.EventHandler(this.BtnNovoJogoClick1);
+            // 
+            // btnPausar
+            // 
+            this.btnPausar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPausar.Enabled = false;
+            this.btnPausar.Image = global::BloquinhosWin.Properties.Resources.pause;
+            this.btnPausar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPausar.Location = new System.Drawing.Point(200, 186);
+            this.btnPausar.Name = "btnPausar";
+            this.btnPausar.Size = new System.Drawing.Size(84, 84);
+            this.btnPausar.TabIndex = 5;
+            this.btnPausar.Text = "&Pausar";
+            this.btnPausar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPausar.UseVisualStyleBackColor = true;
+            this.btnPausar.Click += new System.EventHandler(this.BtnPausarClick);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(767, 540);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNextLife);
             this.Controls.Add(this.pbProximaVida);
             this.Controls.Add(this.lblTempo);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.P64);
             this.Controls.Add(this.P63);
             this.Controls.Add(this.P62);
@@ -1207,7 +1222,6 @@ namespace BloquinhosWin
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picEscolhido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P64)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P63)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P62)).EndInit();
@@ -1272,8 +1286,8 @@ namespace BloquinhosWin
             ((System.ComponentModel.ISupportInitialize)(this.P3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEscolhido)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         internal System.Windows.Forms.Timer Timer1;
@@ -1348,7 +1362,6 @@ namespace BloquinhosWin
         internal System.Windows.Forms.PictureBox P49;
         internal System.Windows.Forms.Button btnNovoJogo;
         internal System.Windows.Forms.Button btnFechar;
-        private Label label1;
         internal Label lblTempo;
         internal ProgressBar pbProximaVida;
         internal Label lblNextLife;
@@ -1356,7 +1369,8 @@ namespace BloquinhosWin
         private ImageList imageList1;
         internal PictureBox picEscolhido;
         internal Label lblItemEscolhido;
-
+        private Label label2;
+        internal Button btnRanking;
     }
 
 }
